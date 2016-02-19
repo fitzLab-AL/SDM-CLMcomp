@@ -544,7 +544,8 @@ sdmStats <- function(dat, p_prj, p_fit, measure){
       }else{
         sdm <- dat2[which(dat2$model == "gam"),]
         clm <- dat2[which(dat2$model == "cao"),]
-        results <- t.test(sdm$value, clm$value, paired=T)
+        #results <- t.test(sdm$value, clm$value, paired=T)
+        results <- wilcox.test(sdm$value, clm$value, paired=T)
         stat.gam[j,l] <- results$p.value
       }     
       
@@ -553,23 +554,27 @@ sdmStats <- function(dat, p_prj, p_fit, measure){
       }else{
         sdm <- dat2[which(dat2$model == "glm"),]
         clm <- dat2[which(dat2$model == "cqo"),]
-        results <- t.test(sdm$value, clm$value, paired=T)
+        #results <- t.test(sdm$value, clm$value, paired=T)
+        results <- wilcox.test(sdm$value, clm$value, paired=T)
         stat.glm[j,l] <- results$p.value
       }
       
       sdm <- dat2[which(dat2$model == "scarts"),]
       clm <- dat2[which(dat2$model == "carts"),]
-      results <- t.test(sdm$value, clm$value, paired=T)
+      #results <- t.test(sdm$value, clm$value, paired=T)
+      results <- wilcox.test(sdm$value, clm$value, paired=T)
       stat.scarts[j,l] <- results$p.value
       
       sdm <- dat2[which(dat2$model == "smars"),]
       clm <- dat2[which(dat2$model == "mars"),]
-      results <- t.test(sdm$value, clm$value, paired=T)
+      #results <- t.test(sdm$value, clm$value, paired=T)
+      results <- wilcox.test(sdm$value, clm$value, paired=T)
       stat.smars[j,l] <- results$p.value
       
       sdm <- dat2[which(dat2$model == "snn"),]
       clm <- dat2[which(dat2$model == "mnn"),]
-      results <- t.test(sdm$value, clm$value, paired=T)
+      #results <- t.test(sdm$value, clm$value, paired=T)
+      results <- wilcox.test(sdm$value, clm$value, paired=T)
       stat.snnet[j,l] <- results$p.value
     }
   }
@@ -678,7 +683,8 @@ sdmStats_ModelType <- function(dat, p_prj, p_fit, measure){
       ind <- intersect(unique(sdm$iteration), unique(clm$iteration))
       sdm <- sdm[which(sdm$iteration %in% ind),]
       clm <- clm[which(clm$iteration %in% ind),]
-      results <- t.test(sdm$value, clm$value, paired=T)
+      #results <- t.test(sdm$value, clm$value, paired=T)
+      results <- wilcox.test(sdm$value, clm$value, paired=T)
       stat.Data[j,l] <- results$p.value
     }
   
