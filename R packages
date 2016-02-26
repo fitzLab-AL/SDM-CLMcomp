@@ -58,6 +58,9 @@ Wong, J. (2013). pdist: Partitioned distance function. R package version 1.2. ht
 permute – 
 Simpson, G.L. (2014). permute: Functions for generating restricted permutations of data. R package version 0.8-3. http://CRAN.R-project.org/package=permute
 
+qpcR - 
+Spies, A-N. (2014). qpcR: Modeling and analysis of real-time PCR data. R package version 1.3-9. http://CRAN.R-project.org/package=qpcR
+
 raster – 
 Hijmans, R.J. (2014). raster: Geographic data analysis and modeling. R package version 2.3-12. http://CRAN.R-project.org/package=raster
 
